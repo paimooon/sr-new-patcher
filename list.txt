@@ -1,0 +1,1 @@
+StarRail_Data/StreamingAssets/BinaryVersion.bytes

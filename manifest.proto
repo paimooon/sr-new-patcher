@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+message root {
+  repeated LDiffManifest manifests = 1;
+  //repeated DeleteFiles deletefiles = 2; TODO
+}
+
+message LDiffManifest {
+  string file_name = 1;
+  uint32 size = 2;
+  string file_hash = 3;
+  repeated FileData file_data = 4;
+}
+
+message FileData {
+  string tag = 1;
+  repeated PatchInfo patch_info = 2;
+}
+
+message PatchInfo {
+  string id = 1;
+  string tag = 2;
+  string build_id = 3;
+  uint32 ldiff_size = 4;
+  string file_hash = 5;
+  uint32 offset = 6;
+  uint32 size = 7;
+  string original_file_name = 8;
+  uint32 original_file_size = 9;
+  string original_file_hash = 10;
+}
